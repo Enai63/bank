@@ -13,13 +13,13 @@ public class Credit {
     private Long limitCredit;
     private Integer percent;
 
-    public Credit() {
-    }
-
     public Credit(Long id, Long limitCredit, Integer percent) {
         this.id = id;
         this.limitCredit = limitCredit;
         this.percent = percent;
+    }
+
+    public Credit() {
     }
 
     public Long getId() {

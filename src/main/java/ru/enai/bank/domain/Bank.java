@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "bank")
+@Table(name = "creditbank")
 public class Bank {
 
     @Id
@@ -16,14 +16,14 @@ public class Bank {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Credit> credits;
 
-    public Bank() {
-    }
-
     public Bank(Long id, String name, List<Client> clients, List<Credit> credits) {
         this.id = id;
         this.name = name;
         this.clients = clients;
         this.credits = credits;
+    }
+
+    public Bank() {
     }
 
     public Long getId() {

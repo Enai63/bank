@@ -16,24 +16,24 @@ public class ClientService {
         this.clientRepository = clientRepository;
     }
 
-    protected Client saveClient(Client client) {
-        return clientRepository.save(client);
-    }
+     public void saveClient(Client client) {
+         clientRepository.save(client);
+     }
 
-    protected List<Client> getClient() {
+     public List<Client> getClients() {
         return clientRepository.findAll();
     }
 
-    protected Client getClient(Long id) {
+     public Client getClient(Long id) {
         return clientRepository.findById(id).orElse(null); //TODO NPE fix
     }
 
-    protected String deleteClientById(Long id) {
+     public String deleteClientById(Long id) {
         clientRepository.deleteById(id);
         return "Client has delete id = " + id;
     }
 
-    protected String deleteClientBySurNameFirstNameLastName(Client client) {
+     public String deleteClientBySurNameFirstNameLastName(Client client) {
         String surName = client.getSurName();
         String firstName = client.getFirstName();
         Client findClient = clientRepository.findBySurNameAndFirstName(surName, firstName);
@@ -41,7 +41,7 @@ public class ClientService {
         return "Client has delete";
     }
 
-    protected Client updateClient(Client client) {
+     public Client updateClient(Client client) {
         Client clientUpdate = clientRepository.findById(client.getId()).orElseThrow();
         clientUpdate.setEmail(client.getEmail());
         clientUpdate.setPassportNumber(client.getPassportNumber());

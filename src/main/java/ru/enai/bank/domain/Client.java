@@ -17,6 +17,9 @@ public class Client {
     private String email;
     private Integer passportNumber;
 
+    public Client() {
+    }
+
     public Client(Long id, String surName, String firstName, String lastName, Integer phoneNumber, String email, Integer passportNumber) {
         this.id = id;
         this.surName = surName;
@@ -25,9 +28,6 @@ public class Client {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.passportNumber = passportNumber;
-    }
-
-    public Client() {
     }
 
     public Long getId() {

@@ -1,6 +1,5 @@
 package ru.enai.bank.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import ru.enai.bank.calculator.PaymentSchedule;
 
 import javax.persistence.*;
